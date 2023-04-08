@@ -1,0 +1,8 @@
+{
+    "routes": [
+      {
+        "src": "/api/getPageviews",
+        "dest": "./api/getPageviews.js"
+      }
+    ]
+  }
