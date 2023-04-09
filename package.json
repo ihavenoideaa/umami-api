@@ -1,14 +1,19 @@
 {
-  "name": "umami-api",
+  "name": "umami-api-docker",
   "version": "1.0.0",
-  "description": "",
+  "description": "umami docker ver",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "author": "",
+  "keywords": [
+    "umami",
+    "api"
+  ],
+  "author": "xzgl jiang",
   "license": "ISC",
   "dependencies": {
+    "cors": "^2.8.5",
     "umami-api": "^0.7.2"
   }
 }

@@ -1,4 +1,19 @@
+import cors from "cors";
 import UmamiAPIClient from "umami-api";
+
+const allowedOrigins = ['https://*.xzgl.site', 'https://*.xzgljiang.com'];
+
+
+const corsHandler = cors({
+  origin: (origin, callback) => {
+    if(!origin || allowedOrigins.some((allowedOrigin) => origin.includes(allowedOrigin))) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  }
+});
+
 const umami = new UmamiAPIClient(
   process.env.UMAMI_APP_URL,
   process.env.UMAMI_APP_USERNAME,
@@ -6,6 +21,8 @@ const umami = new UmamiAPIClient(
 );
 module.exports = async (req, res) => {
   try {
+    await corsHandler(req, res); // 调用CORS中间件处理跨域请求
+
     const myWebsite = await umami.getWebsite("f366bda0-02fb-444e-87b5-a95e432acdcc");
     const eventsview = await myWebsite.getEvents(
       {
