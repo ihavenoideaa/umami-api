@@ -10,7 +10,7 @@
     "umami",
     "api"
   ],
-  "author": "xzgl jiang",
+  "author": "ihavenoideaa(xzgl)",
   "license": "ISC",
   "dependencies": {
     "babel-core": "^6.26.3",

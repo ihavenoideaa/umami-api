@@ -25,6 +25,6 @@ module.exports = async (req, res) => {
 
   } catch (error) {
     console.error(error);
-    return res.status(500).send('Oops! check the vercel log.');
+    return res.status(500).send('Oops! API 出错了');
   }
 };
