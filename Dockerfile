@@ -5,6 +5,8 @@ COPY package*.json ./
 RUN npm install
 COPY . .
 
+RUN npm install -g babel-cli
+
 ENV UMAMI_APP_URL="https://url.com/"
 ENV UMAMI_APP_USERNAME="username"
 ENV UMAMI_APP_PASSWORD="password"
