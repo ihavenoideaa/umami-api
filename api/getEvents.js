@@ -6,7 +6,7 @@ const umami = new UmamiAPIClient(
 );
 module.exports = async (req, res) => {
   try {
-    const myWebsite = await umami.getWebsite("f366bda0-02fb-444e-87b5-a95e432acdcc");
+    const myWebsite = await umami.getWebsite(process.env.UMAMI_WEBSITEUUID);
     const eventsview = await myWebsite.getEvents(
       {
         unit: "year"       // 以年为间隔，相同的项在不同间隔触发会分开显示
