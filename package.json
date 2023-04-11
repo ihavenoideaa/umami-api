@@ -4,7 +4,7 @@
   "description": "umami docker ver",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "babel-node --presets env index.js"
   },
   "keywords": [
     "umami",
@@ -13,7 +13,10 @@
   "author": "xzgl jiang",
   "license": "ISC",
   "dependencies": {
+    "babel-core": "^6.26.3",
+    "babel-preset-env": "^1.7.0",
     "cors": "^2.8.5",
+    "express": "^4.18.2",
     "umami-api": "^0.7.2"
   }
 }
