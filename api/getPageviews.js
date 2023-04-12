@@ -9,7 +9,9 @@ const umami = new UmamiAPIClient(
 module.exports = async (req, res) => {
   try {
     const myWebsite = await umami.getWebsite(process.env.UMAMI_WEBSITEUUID);
-    const pageviews = await myWebsite.getPageviews();
+    const pageviews = await myWebsite.getPageviews({
+      period: process.env.TIME_PERIOD
+    });
 
     return res.send(JSON.stringify(pageviews));
 

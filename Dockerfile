@@ -11,6 +11,7 @@ ENV UMAMI_APP_URL="https://url.com/"
 ENV UMAMI_APP_USERNAME="username"
 ENV UMAMI_APP_PASSWORD="password"
 ENV UMAMI_WEBSITEUUID="Your-WebsiteUuid"
+ENV TIME_PERIOD = "1d"
 
 EXPOSE 3000
 CMD [ "npm", "start" ]
