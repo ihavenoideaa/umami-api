@@ -9,7 +9,10 @@ const umami = new UmamiAPIClient(
 module.exports = async (req, res) => {
   try {
     const myWebsite = await umami.getWebsite(process.env.UMAMI_WEBSITEUUID);
-    const eventsview = await myWebsite.getEvents({ unit: 'year' });
+    const eventsview = await myWebsite.getEvents({ 
+      period: process.env.TIME_PERIOD,
+      unit: 'year' 
+    });
 
     const result = {};
     for (const item of eventsview) {
