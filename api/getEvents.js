@@ -9,6 +9,7 @@ module.exports = async (req, res) => {
     const myWebsite = await umami.getWebsite(process.env.UMAMI_WEBSITEUUID);
     const eventsview = await myWebsite.getEvents(
       {
+        period: process.env.TIME_PERIOD,
         unit: "year"       // 以年为间隔，相同的项在不同间隔触发会分开显示
       }
     );
