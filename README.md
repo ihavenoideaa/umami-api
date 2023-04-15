@@ -1,5 +1,7 @@
 ### UMAMI-API Docker Version
 
+vercel 部署 API, 访问起来实在是慢慢慢，所以打包成 docker 运行在服务器上。
+
 docker run:
 
 ```
@@ -8,6 +10,7 @@ docker run -d --name="umami-api" \
 -e UMAMI_APP_USERNAME="umami-username" \
 -e UMAMI_APP_PASSWORD="umami-password" \
 -e UMAMI_WEBSITEUUID="Your-WebsiteUuid" \
+-e TIME_PERIOD="1day"\
 ihavenoideaa/umami-api
 ```
 
